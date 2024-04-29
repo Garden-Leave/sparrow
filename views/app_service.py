@@ -7,7 +7,7 @@ import time
 import redis
 from collections import defaultdict
 from flask_sqlalchemy import SQLAlchemy
-from pyecharts import Tree
+from pyecharts.charts import Tree
 from pykafka import KafkaClient
 app = Flask(__name__)
 DB = SQLAlchemy(app)

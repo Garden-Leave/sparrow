@@ -4,6 +4,10 @@ from flask import Flask
 app = Flask(__name__)
 DB = SQLAlchemy(app)
 app.config.from_pyfile('../conf/sql.conf')
+
+
+# 把所有IDC相关的表格转化为数据模型
+
 class apscheduler_jobs(DB.Model):
     __tablename__ = 'apscheduler_jobs'
     __bind_key__ = 'idc'

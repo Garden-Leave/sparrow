@@ -2,7 +2,7 @@
 from flask import Flask,Blueprint,request,render_template,g,redirect,url_for
 from module import user_auth,db_op,db_idc,loging,MyForm,tools
 from sqlalchemy import func,and_,desc
-from pyecharts import Bar,Pie,Line
+from pyecharts.charts import Bar,Pie,Line
 import redis
 from functools import reduce
 from flask_sqlalchemy import SQLAlchemy

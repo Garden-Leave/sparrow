@@ -22,6 +22,8 @@ redis_host = app.config.get('REDIS_HOST')
 redis_password = app.config.get('REDIS_PASSWORD')
 RC = redis.StrictRedis(host=redis_host, port=redis_port,decode_responses=True)
 page_assets_query = Blueprint('assets_query', __name__)
+
+
 @page_assets_query.route('/assets_query',methods = ['POST'])
 @limiter.limit("200/minute")
 def assets_query():

@@ -13,7 +13,8 @@ redis_port = app.config.get('REDIS_PORT')
 redis_password = app.config.get('REDIS_PASSWORD')
 Redis = redis.StrictRedis(host=redis_host, port=redis_port,decode_responses=True)
 service_url = app.config.get('SERVICE_URL')
-ENV = tools.check_env()
+# ENV = tools.check_env()
+ENV = 'dev'
 if ENV == 'dev':
     service_url = app.config.get('SERVICE_TEST_URL')
 page_logout = Blueprint('logout',__name__)

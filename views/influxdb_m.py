@@ -5,13 +5,12 @@ import time
 import datetime
 import json
 import redis
-from pyecharts import Bar,Line
+from pyecharts.charts import Bar,Line
 from flask_sqlalchemy import SQLAlchemy
 from influxdb import InfluxDBClient
 from collections import OrderedDict,defaultdict
 from sqlalchemy import func
 import urllib
-from pyecharts import Pie
 app = Flask(__name__)
 logging = loging.Error()
 DB = SQLAlchemy(app)

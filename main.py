@@ -19,6 +19,8 @@ from flask_debugtoolbar import DebugToolbarExtension
 import conf
 class MyFlask(Flask):
     jinja_environment = conf.FlaskEchartsEnvironment
+
+# 生成主要的对象
 app = MyFlask(__name__)
 DB = SQLAlchemy(app)
 mail = Mail(app)
@@ -34,7 +36,10 @@ app.secret_key = app.config.get('SECRET_KEY')
 app.debug = False
 task_run = produce.SchedulerBackgroud()
 toolbar = DebugToolbarExtension(app)
+
 ssl._create_default_https_context = ssl._create_unverified_context
+
+# 注册所有蓝图视图
 app.register_blueprint(Assets.page_Assets)
 app.register_blueprint(assets_manage.page_assets_manage)
 app.register_blueprint(publish.page_publish)
@@ -59,6 +64,8 @@ app.register_blueprint(work_order.page_work_order)
 app.register_blueprint(k8s_manage.page_k8s_manage)
 app.register_blueprint(k8s_deploy.page_k8s_deploy)
 app.register_blueprint(k8s_operation.page_k8s_operation)
+
+# 后台任务
 produce.scheduler_tasks()
 task_run.Run()
 assets.register('js_file', conf.js_files())

@@ -3,12 +3,13 @@ import redis
 from module import loging,SSH,db_idc,db_op,tools
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import and_,distinct
+from sqlalchemy import and_, distinct
 from influxdb import InfluxDBClient
 from collections import defaultdict
 from pyzabbix.api import ZabbixAPI
 import datetime
 import time
+
 import pytz
 from elasticsearch import Elasticsearch
 from functools import reduce
@@ -44,7 +45,7 @@ es = Elasticsearch(hosts=es_hosts,timeout=60)
 ops_token = app.config.get('OPS_TOKEN')
 redis_token = app.config.get('REDIS_TOKEN')
 KAFKA_HOSTS = app.config.get('KAFKA_HOSTS')
-config,contexts,config_file = tools.k8s_conf()
+config, contexts, config_file = tools.k8s_conf()
 @tools.proce_lock()
 def task_cron_run():
     try:

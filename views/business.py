@@ -2,7 +2,7 @@
 from flask import Flask,Blueprint,render_template,g,flash,request
 from module import user_auth,db_op,tools,db_idc,loging
 from sqlalchemy import distinct,and_,func,desc
-from pyecharts import Bar,Pie
+from pyecharts.charts import Bar,Pie
 from collections import defaultdict,OrderedDict
 import redis
 import datetime

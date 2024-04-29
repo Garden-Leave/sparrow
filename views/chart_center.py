@@ -11,7 +11,7 @@ import importlib
 from sqlalchemy import func,desc,distinct
 import time,datetime
 from elasticsearch import Elasticsearch
-from pyecharts import Bar,Pie,Line
+from pyecharts.charts import Bar,Pie,Line
 from flask_sqlalchemy import SQLAlchemy
 from collections import defaultdict,OrderedDict
 app = Flask(__name__)
