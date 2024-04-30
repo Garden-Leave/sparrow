@@ -80,7 +80,7 @@ class idc_servers(DB.Model):
 
 class idc_id(DB.Model):
     __tablename__ = 'idc_id'
-    __bind_key__='idc'
+    __bind_key__='idc'    # 绑定数据库连接  sql.conf: SQLALCHEMY_BINDS {}
     id = DB.Column(DB.Integer, primary_key=True,autoincrement=True)
     aid = DB.Column(DB.String(20))
     cid = DB.Column(DB.String(20))
@@ -369,3 +369,7 @@ class k8s_pods(DB.Model):
     def __repr__(self):
         values=(self.context,self.pod_ip,self.pod_name,self.node_name,self.uptime)
         return '%s,%s,%s,%s,%s'%values
+
+
+if __name__ == '__main__':
+    DB.create_all()

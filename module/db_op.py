@@ -621,3 +621,7 @@ class docker_hosts(DB.Model):
     def __repr__(self):
         values=(self.deployment,self.context,self.ip,self.hostname)
         return '%s,%s,%s,%s'%values
+
+
+if __name__ == '__main__':
+    DB.create_all()

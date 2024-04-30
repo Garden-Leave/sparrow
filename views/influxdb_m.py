@@ -5,7 +5,8 @@ import time
 import datetime
 import json
 import redis
-from pyecharts.charts import Bar,Line
+from pyecharts.charts.bar import Bar
+from pyecharts.charts.line import Line
 from flask_sqlalchemy import SQLAlchemy
 from influxdb import InfluxDBClient
 from collections import OrderedDict,defaultdict

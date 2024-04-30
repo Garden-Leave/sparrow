@@ -9,7 +9,7 @@ import time,datetime
 from tcpping import tcpping
 import redis
 from functools import reduce
-from pyecharts.charts import Line
+from pyecharts.charts.line import Line
 from importlib import reload
 from sqlalchemy import desc,and_
 app = Flask(__name__)

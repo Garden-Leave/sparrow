@@ -7,7 +7,7 @@ import time
 import redis
 from collections import defaultdict
 from flask_sqlalchemy import SQLAlchemy
-from pyecharts.charts import Tree
+from pyecharts.charts.treemap import TreeMap
 from pykafka import KafkaClient
 app = Flask(__name__)
 DB = SQLAlchemy(app)
@@ -252,7 +252,7 @@ def redis_status(redis_master=None):
                                                                                                                 port)})
         except Exception as e:
             logging.error(e)
-    tree = Tree(width='100%', height=600)
+    tree = TreeMap(width='100%', height=600)
     tree.add("", DATA, tree_symbol_size=10, tree_label_text_size=14, tree_leaves_text_size=12, is_toolbox_show=False)
     return render_template('redis_status.html',tree = tree)
 

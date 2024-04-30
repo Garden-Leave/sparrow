@@ -100,7 +100,7 @@ class MyFromThirdResource(Form):
         submit_recucle = SubmitField('回收', id='submit')
 
 class MyFormAssetsManage(Form):
-    db_idc_id = db_idc.idc_id
+    db_idc_id = db_idc.idc_id    #关联idc_id这个数据库表对象
     text = TextAreaField(validators=[DataRequired()])
     try:
         db_values = db_idc_id.query.with_entities(distinct(db_idc_id.aid)).all()

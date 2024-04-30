@@ -95,3 +95,7 @@ def method_not_allowed(error):
 @app.route('/error')
 def error():
     return render_template('error.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=False, port=5008)
